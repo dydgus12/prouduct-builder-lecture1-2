@@ -182,3 +182,23 @@ if (partnershipInquiryBtn && partnershipInquiryModal && closeInquiryModalBtn) {
         }
     });
 }
+
+// Dinner Recommendation Feature
+const dinnerMenus = [
+    "김치찌개", "된장찌개", "짜장면", "짬뽕", "탕수육",
+    "파스타", "피자", "치킨", "족발", "보쌈",
+    "스테이크", "초밥", "카레", "돈까스", "비빔밥",
+    "불고기", "제육볶음", "닭갈비", "갈비찜", "아구찜"
+];
+
+const recommendDinnerBtn = document.getElementById('recommend-dinner-btn');
+const recommendedMenuDisplay = document.getElementById('recommended-menu');
+
+if (recommendDinnerBtn && recommendedMenuDisplay) {
+    recommendDinnerBtn.addEventListener('click', () => {
+        const randomIndex = Math.floor(Math.random() * dinnerMenus.length);
+        const recommendedMenu = dinnerMenus[randomIndex];
+        recommendedMenuDisplay.textContent = recommendedMenu;
+        displayMessage(`${recommendedMenu} 어떠세요?`, 'info');
+    });
+}

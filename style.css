@@ -371,3 +371,89 @@ body.modal-open {
         font-size: 1.5rem;
     }
 }
+
+/* Dinner Recommendation Styles */
+.dinner-recommendation-container {
+    max-width: 500px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 40px;
+    border-radius: 20px;
+    background: var(--container-bg);
+    box-shadow: 0 0 30px var(--container-shadow-1), 0 0 60px var(--container-shadow-2), 0 0 90px var(--container-shadow-3);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--container-border);
+    text-align: center;
+    transition: background 0.5s ease, box-shadow 0.5s ease, border 0.5s ease;
+}
+
+.dinner-recommendation-container h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px var(--glow-color);
+    transition: background 0.5s ease, text-shadow 0.5s ease;
+}
+
+.recommended-menu {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    min-height: 2.5em; /* Ensure some height for text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 0 5px rgba(0,0,0,0.3);
+    transition: color 0.5s ease, text-shadow 0.5s ease;
+}
+
+.recommend-btn {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-color); /* Will be overridden to white in light mode */
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px var(--glow-color);
+}
+
+.recommend-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 30px var(--glow-color), 0 0 40px var(--secondary-color);
+}
+
+.recommend-btn:active {
+    transform: translateY(0) scale(1);
+}
+
+/* Light mode specific text color adjustment for recommend button */
+body.light-mode .recommend-btn {
+    color: #ffffff;
+}
+
+@media (max-width: 600px) {
+    .dinner-recommendation-container {
+        padding: 30px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .dinner-recommendation-container h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    .recommended-menu {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+    .recommend-btn {
+        padding: 12px 25px;
+        font-size: 1.1rem;
+    }
+}
