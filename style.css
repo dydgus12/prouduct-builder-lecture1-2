@@ -17,18 +17,18 @@
 }
 
 body.light-mode {
-    --primary-color: #6a11cb;
-    --secondary-color: #2575fc;
-    --background-color: #f0f2f5;
-    --text-color: #333333;
-    --glow-color: rgba(106, 17, 203, 0.5);
-    --container-bg: rgba(255, 255, 255, 0.8);
-    --container-shadow-1: rgba(0,0,0,0.1);
-    --container-shadow-2: rgba(106, 17, 203, 0.3);
-    --container-shadow-3: rgba(37, 117, 252, 0.3);
-    --container-border: rgba(0, 0, 0, 0.1);
-    --lotto-ball-shadow-1: rgba(0,0,0,0.1);
-    --lotto-ball-shadow-2: rgba(0,0,0,0.1);
+    --primary-color: #4a148c; /* Darker purple for better contrast */
+    --secondary-color: #1e88e5; /* A vibrant, but not overwhelming blue */
+    --background-color: #f8f9fa; /* Softer, slightly warmer white background */
+    --text-color: #212529; /* Very dark grey for maximum text readability */
+    --glow-color: rgba(74, 20, 140, 0.3); /* Adjusted glow color */
+    --container-bg: rgba(255, 255, 255, 0.95); /* Slightly more opaque container background */
+    --container-shadow-1: rgba(0,0,0,0.15); /* Slightly stronger shadow for definition */
+    --container-shadow-2: rgba(74, 20, 140, 0.2); /* Adjusted glow shadow */
+    --container-shadow-3: rgba(30, 136, 229, 0.2); /* Adjusted glow shadow */
+    --container-border: rgba(0, 0, 0, 0.15); /* Clearer border */
+    --lotto-ball-shadow-1: rgba(0,0,0,0.15);
+    --lotto-ball-shadow-2: rgba(0,0,0,0.08); /* Softer inner shadow */
 }
 
 body {
