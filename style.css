@@ -31,6 +31,13 @@ body.light-mode {
     --lotto-ball-shadow-2: rgba(0,0,0,0.08); /* Softer inner shadow */
 }
 
+/* Light mode specific text color adjustments for buttons and lotto balls */
+body.light-mode .generate-btn,
+body.light-mode .theme-toggle,
+body.light-mode .lotto-ball {
+    color: #ffffff; /* White text for better contrast on colored buttons/balls in light mode */
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--background-color);
