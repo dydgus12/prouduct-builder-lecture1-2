@@ -122,3 +122,39 @@ generateBtn.addEventListener('click', () => {
     displayMessage('새로운 로또 번호가 생성되었습니다!');
 });
 
+// Contact Form Submission Handling
+const contactForm = document.getElementById('contact-form');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async (event) => {
+        event.preventDefault(); // Prevent default form submission
+
+        const formButton = contactForm.querySelector('.submit-btn');
+        formButton.disabled = true; // Disable button to prevent multiple submissions
+        formButton.textContent = '전송 중...'; // Change button text
+
+        const formData = new FormData(contactForm);
+        const response = await fetch(contactForm.action, {
+            method: contactForm.method,
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            displayMessage('제휴 문의가 성공적으로 전송되었습니다!', 'success');
+            contactForm.reset(); // Clear form fields
+        } else {
+            const data = await response.json();
+            if (Object.hasOwnProperty.call(data, 'errors')) {
+                displayMessage(data["errors"].map(error => error["message"]).join(", "), 'error');
+            } else {
+                displayMessage('제휴 문의 전송에 실패했습니다. 다시 시도해주세요.', 'error');
+            }
+        }
+        formButton.disabled = false; // Re-enable button
+        formButton.textContent = '문의하기'; // Restore button text
+    });
+}
+
