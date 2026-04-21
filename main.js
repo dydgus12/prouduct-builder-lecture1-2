@@ -158,3 +158,27 @@ if (contactForm) {
     });
 }
 
+// Modal functionality for Partnership Inquiry Form
+const partnershipInquiryBtn = document.getElementById('partnership-inquiry-btn');
+const partnershipInquiryModal = document.getElementById('partnership-inquiry-modal');
+const closeInquiryModalBtn = partnershipInquiryModal ? partnershipInquiryModal.querySelector('.close-modal-btn') : null;
+
+if (partnershipInquiryBtn && partnershipInquiryModal && closeInquiryModalBtn) {
+    partnershipInquiryBtn.addEventListener('click', () => {
+        partnershipInquiryModal.classList.add('show');
+        document.body.classList.add('modal-open');
+    });
+
+    closeInquiryModalBtn.addEventListener('click', () => {
+        partnershipInquiryModal.classList.remove('show');
+        document.body.classList.remove('modal-open');
+    });
+
+    // Close modal when clicking outside of the content
+    partnershipInquiryModal.addEventListener('click', (event) => {
+        if (event.target === partnershipInquiryModal) {
+            partnershipInquiryModal.classList.remove('show');
+            document.body.classList.remove('modal-open');
+        }
+    });
+}
