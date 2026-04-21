@@ -44,19 +44,12 @@ body {
     color: var(--text-color);
     display: flex; /* Make body a flex container */
     flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center content horizontally */
     min-height: 100vh;
     margin: 0;
     overflow-x: hidden; /* Prevent horizontal scroll from button positioning */
     position: relative;
     transition: background-color 0.5s ease, color 0.5s ease;
-}
-
-body > .container { /* Apply centering to main content containers */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%; /* Ensure container fills width to apply centering */
 }
 
 /* Header for buttons */
@@ -77,6 +70,7 @@ body > .container { /* Apply centering to main content containers */
     font-size: 1rem;
     border-radius: 25px;
     cursor: pointer;
+    /* Removed margin-bottom */
     transition: all 0.3s ease;
 }
 
@@ -108,11 +102,18 @@ body.light-mode .header-btn {
     }
 }
 
-/* Added spacing for lotto container */
-.lotto-container {
-    margin-bottom: 50px; /* Space below lotto section */
-    margin-top: 50px; /* Space from top or header */
+/* Main Content Sections Layout */
+.main-content-sections {
+    display: flex;
+    justify-content: center; /* Center the entire block */
+    align-items: flex-start; /* Align items to the top if they have different heights */
+    gap: 40px; /* Space between lotto and dinner sections */
+    margin-top: 100px; /* Space from the header */
+    margin-bottom: 50px; /* Space below content sections */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    max-width: 1200px; /* Limit overall width */
 }
+
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
@@ -124,6 +125,13 @@ body.light-mode .header-btn {
     .header-btn {
         padding: 8px 15px;
         font-size: 0.9rem;
+    }
+
+    .main-content-sections {
+        flex-direction: column; /* Stack vertically on small screens */
+        align-items: center; /* Center stacked items */
+        gap: 50px; /* Space between stacked items */
+        margin-top: 80px;
     }
 }
 
